@@ -14,18 +14,19 @@ Software & Updates ==> AdditionalDrivers ==> nvidia-driver-470 (proprietary, tes
 sudo apt update\
 sudo apt install build-essential\
 sudo apt-get install manpages-dev\
-sudo apt install gcc\
+sudo apt install gcc
 
 ## 3) Install CUDA Toolkit 11.0 Update 3
 
-wget https://developer.download.nvidia.com/compute/cuda/11.0.3/local_installers/cuda_11.0.3_450.51.06_linux.run\
-sudo sh cuda_11.0.3_450.51.06_linux.run\
+wget https://developer.download.nvidia.com/compute/cuda/11.0.3/local_installers/cuda_11.0.3_450.51.06_linux.run \
+sudo sh cuda_11.0.3_450.51.06_linux.run
 
+### Only check CUDA toolKit 11.0
 
 ## 4) Add CUDA path
 nano ~/.bashrc\ 
-export PATH=/usr/local/cuda/bin${PATH:+:${PATH}}$\ 
-export LD_LIBRARY_PATH=/usr/local/cuda/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}\
+export PATH=/usr/local/cuda/bin${PATH:+:${PATH}}$ \ 
+export LD_LIBRARY_PATH=/usr/local/cuda/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
 
 ## 5) Install CUDNN
 tar -xvf cudnn-11.0-linux-x64-v8.0.5.39.tg\
