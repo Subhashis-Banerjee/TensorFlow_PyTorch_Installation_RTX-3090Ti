@@ -12,7 +12,7 @@ PyTorch v1.7.1 (https://pytorch.org/get-started/previous-versions/)
 Software & Updates ==> AdditionalDrivers ==> nvidia-driver-470 (proprietary, tested) 
 
 ## 2) Install gcc
-$ sudo apt update
+sudo apt update\
 $ sudo apt install build-essential
 $ sudo apt-get install manpages-dev
 $ sudo apt install gcc
