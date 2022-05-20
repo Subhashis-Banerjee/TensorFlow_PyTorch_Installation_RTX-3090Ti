@@ -8,7 +8,7 @@ PyTorch v1.7.1 (https://pytorch.org/get-started/previous-versions/)
 ##  cuDNN v8.0.5 (November 9th, 2020), for CUDA 11.0 (provided)
 
 ## 1) Install Nvidia Driver 
-Software & Updates ==> AdditionalDrivers ==> nvidia-driver-510 (proprietary, tested) 
+Software & Updates ==> AdditionalDrivers ==> nvidia-driver-470 (proprietary, tested) 
 
 ## 2) Install gcc
 sudo apt update\
