@@ -43,8 +43,17 @@ export LD_LIBRARY_PATH=/usr/local/cuda-11.0/lib64${LD_LIBRARY_PATH:+${LD_LIBRARY
 ### Check installation
 nvcc --version
 
-### Install pytorch and tensorflow
-#### Install virtual environment 
+# Install pytorch and tensorflow
+
+## 1) Install Anconda
+Download Anconda (https://www.anaconda.com/)
+Install: sh Anaconda3-2022.05-Linux-x86_64.sh
+
+## 2 Create Virtual Environment 
+conda create -n tf python=3.8
+conda activate tf
+
+
 1) sudo apt install python3.8-venv
 2) python3 -m venv venv
 ### Activate the virtual environment
