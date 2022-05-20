@@ -8,33 +8,37 @@ PyTorch v1.7.1 (https://pytorch.org/get-started/previous-versions/)
 ##  cuDNN v8.0.5 (November 9th, 2020), for CUDA 11.0 (provided)
 
 ## 1) Install Nvidia Driver 
-Software & Updates ==> AdditionalDrivers ==> nvidia-driver-470 (proprietary, tested) 
+Software & Updates ==> AdditionalDrivers ==> nvidia-driver-510 (proprietary, tested) 
 
 ## 2) Install gcc
 sudo apt update\
 sudo apt install build-essential\
-sudo apt-get install manpages-dev\
-sudo apt install gcc
+sudo apt-get install manpages-dev
 
 ## 3) Install CUDA Toolkit 11.0 Update 3
 
 wget https://developer.download.nvidia.com/compute/cuda/11.0.3/local_installers/cuda_11.0.3_450.51.06_linux.run \
 sudo sh cuda_11.0.3_450.51.06_linux.run
 
-### Only check CUDA toolKit 11.0 during the installation
+### Only check and install CUDA toolKit 11.0 during the installation
 
-## 4) Add CUDA path
-nano ~/.bashrc 
+## 4) Install CUDNN
+Download cuDNN v8.0.5 (November 9th, 2020), for CUDA 11.0 from cuDNN Archive
 
-export PATH=/usr/local/cuda/bin${PATH:+:${PATH}}$ 
+tar -xvf cudnn-11.0-linux-x64-v8.0.5.39.tgz\
+sudo cp cuda/include/cudnn*.h /usr/local/cuda-11.0/include\
+sudo cp -P cuda/lib64/libcudnn* /usr/local/cuda-11.0/lib64\
+sudo chmod a+r /usr/local/cuda-11.0/include/cudnn*.h /usr/local/cuda-11.0/lib64/libcudnn*\
 
-export LD_LIBRARY_PATH=/usr/local/cuda/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+## 5) Changing CUDA Version
+sudo update-alternatives --install /usr/local/cuda cuda /usr/local/cuda-11.0 90 \
+sudo update-alternatives --config cuda
 
-## 5) Install CUDNN
-tar -xvf cudnn-11.0-linux-x64-v8.0.5.39.tg\
-sudo cp cuda/include/cudnn*.h /usr/local/cuda/include\
-sudo cp -P cuda/lib64/libcudnn* /usr/local/cuda/lib64\
-sudo chmod a+r /usr/local/cuda/include/cudnn*.h /usr/local/cuda/lib64/libcudnn*\
+## 6) PATH Settings
+gedit ~/.bashrc 
+
+eexport PATH=/usr/local/cuda/bin${PATH:+:${PATH}} \
+export LD_LIBRARY_PATH=/usr/local/cuda-11.0/lib64${LD_LIBRARY_PATH:+${LD_LIBRARY_PATH}}
 
 ### Check installation
 nvcc --version
