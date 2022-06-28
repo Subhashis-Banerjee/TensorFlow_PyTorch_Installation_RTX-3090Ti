@@ -37,7 +37,7 @@ sudo update-alternatives --config cuda
 ## 6) PATH Settings
 gedit ~/.bashrc 
 
-eexport PATH=/usr/local/cuda/bin${PATH:+:${PATH}} \
+export PATH=/usr/local/cuda/bin${PATH:+:${PATH}} \
 export LD_LIBRARY_PATH=/usr/local/cuda-11.0/lib64${LD_LIBRARY_PATH:+${LD_LIBRARY_PATH}}
 
 ### Check installation
